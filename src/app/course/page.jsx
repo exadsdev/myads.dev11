@@ -10,20 +10,20 @@ export default function Courses() {
     const schemaData = {
       "@context": "https://schema.org/",
       "@type": "Product",
-      name: "www.myad-dev.com:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์",
+      name: "www.myads.dev:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์",
       image: [
-        "https://www.myad-dev.com/img/รับทำโฆษณาสายเทา.webp",
-        "https://www.myad-dev.com/img/about.webp",
+        "https://www.myads.dev/img/รับทำโฆษณาสายเทา.webp",
+        "https://www.myads.dev/img/about.webp",
       ],
       description:
-        "www.myad-dev.com:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์: โฆษณา Facebook และ Google สายเทา",
+        "www.myads.dev:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์: โฆษณา Facebook และ Google สายเทา",
       brand: {
         "@type": "Brand",
         name: "คอร์สเรียนโฆษณา",
       },
       offers: {
         "@type": "Offer",
-        url: "https://www.myad-dev.com/Course",
+        url: "https://www.myads.dev/Course",
         priceCurrency: "THB",
         price: "9900",
         priceValidUntil: "2025-12-31",
@@ -32,8 +32,8 @@ export default function Courses() {
         seller: {
           "@type": "Organization",
           name: "myad-dev",
-          url: "https://www.myad-dev.com",
-          logo: "https://www.myad-dev.com/img/logo.png",
+          url: "https://www.myads.dev",
+          logo: "https://www.myads.dev/img/logo.png",
         },
       },
     };
@@ -48,11 +48,11 @@ export default function Courses() {
     <>
       <Head>
         <title>
-          www.myad-dev.com:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์
+          www.myads.dev:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์
         </title>
         <meta
           name="description"
-          content="www.myad-dev.com:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์: โฆษณา Facebook และ Google สายเทา"
+          content="www.myads.dev:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์: โฆษณา Facebook และ Google สายเทา"
         />
         <meta
           name="keywords"
@@ -60,7 +60,7 @@ export default function Courses() {
         />
         <meta
           property="og:title"
-          content="www.myad-dev.com:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์"
+          content="www.myads.dev:คอร์สเรียนโฆษณา | บริการคอร์สเรียนทำการตลาดออนไลน์"
         />
         <meta
           property="og:description"
@@ -68,17 +68,17 @@ export default function Courses() {
         />
         <meta
           property="og:image"
-          content="https://www.myad-dev.com/logo.png"
+          content="https://www.myads.dev/logo.png"
         />
-        <meta property="og:url" content="https://www.myad-dev.com/course" />
+        <meta property="og:url" content="https://www.myads.dev/course" />
         <meta property="og:type" content="website" />
         <link
           rel="shortcut icon"
-          href="https://www.myad-dev.com/favicon.ico"
+          href="https://www.myads.dev/favicon.ico"
           type="image/x-icon"
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://www.myad-dev.com/course" />
+        <link rel="canonical" href="https://www.myads.dev/course" />
       </Head>
 
       <div className="container">

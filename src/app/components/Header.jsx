@@ -34,12 +34,12 @@ export default function Header() {
            บริการ
           </Link>
           <ul className="dropdown-menu">
-            <li><a className="dropdown-item" href="/services">บริการ</a></li>
-            <li><a className="dropdown-item" href="/services/google-ads">Google Ads</a></li>
-            <li><a className="dropdown-item" href="/services/facebook-ads">Facebook Ads</a></li>
+            <li><Link className="dropdown-item" href="/services">บริการ</Link></li>
+            <li><Link className="dropdown-item" href="/services/google-ads">Google Ads</Link></li>
+            <li><Link className="dropdown-item" href="/services/facebook-ads">Facebook Ads</Link></li>
           </ul>
 
-          <Link href="/posts">posts</Link>
+             <Link href="/posts">video</Link>
           <Link href="/course">คอร์สเรียนยิงAds</Link>
           <Link href="/toolfree">toolfree</Link>
           <a href="https://lin.ee/OuyclyD" className="btn4">ติดต่อเรา</a>
@@ -76,7 +76,7 @@ export default function Header() {
             <li><a className="dropdown-item" href="/services/facebook-ads">Facebook Ads</a></li>
           </ul>
 
-          <Link href="/posts">posts</Link>
+          <Link href="/posts">video</Link>
           <Link href="/course">คอร์สเรียนยิงAds</Link>
           <Link href="/toolfree">toolfree</Link>
             <a href="https://lin.ee/OuyclyD" className="btn4">ติดต่อเรา</a>

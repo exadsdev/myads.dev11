@@ -127,7 +127,9 @@ export default function HomePage() {
           <li><Link href="/services" prefetch>บริการ</Link></li>
           <li><Link href="/services/google-ads" prefetch>Google Ads</Link></li>
           <li><Link href="/services/facebook-ads" prefetch>Facebook Ads</Link></li>
-          <li><Link href="/faq" prefetch>FAQ</Link></li>
+                <Link href="/course">คอร์สเรียนยิงAds</Link>
+          <li><Link href="/faq" prefetch>Video</Link></li>
+          <li><Link href="/posts" prefetch>FAQ</Link></li>
           <li><Link href="/contact" prefetch>ติดต่อเรา</Link></li>
         </ul>
       </nav>
@@ -183,7 +185,7 @@ export default function HomePage() {
         <div className="cards-grid">
           <article className="card" itemScope itemType="https://schema.org/Service">
             <header>
-              <h3 itemProp="name"><strong> รับยิงแอด สายเทา</strong>Google Ads สายเทา</h3>
+              <h3 itemProp="name"><strong>🌎 รับยิงแอด สายเทา</strong>Google Ads สายเทา</h3>
             </header>
             <p itemProp="description">
               ค้นหาตรงกลุ่ม เพิ่มโอกาสแปลงเป็นลูกค้า
@@ -194,13 +196,13 @@ export default function HomePage() {
               ราคา: 12,900 บาท/เดือน
             </p>
             <Link className="btn w-100" href="/services/google-ads" prefetch>
-              รายละเอียด
+            ✔ รายละเอียด
             </Link>
           </article>
 
           <article className="card" itemScope itemType="https://schema.org/Service">
             <header>
-              <h3 itemProp="name"><strong> รับยิงแอด สายเทา</strong>Facebook Ads สายเทา</h3>
+              <h3 itemProp="name"><strong> ☑ รับยิงแอด สายเทา</strong>Facebook Ads สายเทา</h3>
             </header>
             <p itemProp="description">
               เข้าถึงผู้สนใจด้วยครีเอทีฟและ Conversion API
@@ -211,13 +213,13 @@ export default function HomePage() {
               ราคา: 9,900 บาท/เดือน
             </p>
             <Link className="btn w-100" href="/services/facebook-ads" prefetch>
-              รายละเอียด
+             💥 รายละเอียด
             </Link>
           </article>
 
           <article className="card">
             <header>
-              <h3><strong> รับยิงแอด สายเทา</strong>SEO + Content</h3>
+              <h3><strong>✔ รับยิงแอด สายเทา</strong>SEO + Content</h3>
             </header>
             <p>
               วางโครงสร้างคอนเทนต์ภายในเว็บ
@@ -225,9 +227,41 @@ export default function HomePage() {
               สร้าง FAQ, Services Page และ Internal Linking
             </p>
             <Link className="btn w-100" href="/faq" prefetch>
-              ดู FAQ
+             👂 ดู FAQ
             </Link>
           </article>
+
+
+           <article className="card">
+            <header>
+              <h3>🟢 คอร์สเรียนยิงAds สายเทา</h3>
+            </header>
+            <p>
+            บริการคอร์สเรียนทำการตลาดออนไลน์
+              <br />
+           คอร์สเรียนทำโฆษณา Google, Facebook สายเทา
+            </p>
+            <Link className="btn w-100" href="/course" prefetch>
+             👀 ดูคอร์สเรียน
+            </Link>
+          </article>
+
+           <article className="card">
+            <header>
+              <h3>▶Video สอนยิงแอด สายเทา</h3>
+            </header>
+            <p>
+            Video สอนยิงแอด สายเทา ฟรี ความรู้ดีดีเรามีให้
+              <br />
+          สอนทำโฆษณา Google,Facebook สายเทา  
+            </p>
+            <Link className="btn w-100" href="/posts" prefetch>
+             ▶ดูVideo สอนฟรี
+            </Link>
+          </article>
+
+
+
         </div>
       </section>
 

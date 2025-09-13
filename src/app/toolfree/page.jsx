@@ -1,184 +1,77 @@
-"use client";
-
-import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Head from "next/head";
+import JsonLd from "@/app/components/JsonLd";
+import { SITE, BRAND, LOGO_URL } from "@/app/seo.config";
+import ToolfreeClient from "./ToolfreeClient";
 
-const Toolfree = () => {
-  const [modalIsOpenFb, setModalIsOpenFb] = useState(false);
-  const [modalIsOpenGoogle, setModalIsOpenGoogle] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30);
-  const [downloadType, setDownloadType] = useState(null); // facebook | google
+const site = process.env.NEXT_PUBLIC_SITE_URL || SITE;
 
-  const openModal = (type) => {
-    setDownloadType(type);
-    if (type === "facebook") setModalIsOpenFb(true);
-    if (type === "google") setModalIsOpenGoogle(true);
-    setTimeLeft(30);
-  };
-
-  const closeModal = () => {
-    setModalIsOpenFb(false);
-    setModalIsOpenGoogle(false);
-    setDownloadType(null);
-  };
-
-  useEffect(() => {
-    if (!modalIsOpenFb && !modalIsOpenGoogle) return;
-
-    const timer = setInterval(() => {
-      setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [modalIsOpenFb, modalIsOpenGoogle]);
-
-  useEffect(() => {
-    if (timeLeft === 0 && downloadType) {
-      const url =
-        downloadType === "facebook"
-          ? "https://apipost.www.myads.dev/facebook.zip"
-          : "https://apipost.www.myads.dev/google.zip";
-      window.location.href = url;
-      closeModal();
-    }
-  }, [timeLeft, downloadType]);
-
-  useEffect(() => {
-    const schemaData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      "name": "ดาวน์โหลดเครื่องมือทำการตลาดฟรี - Facebook และ Google",
-      "url": "https://www.myads.dev/toolfree",
-      "description":
-        "ดาวน์โหลดฟรี! เครื่องมือ Landing Page สำหรับยิงแอด Facebook และ Google สายเทา ดาวน์โหลดทันทีไม่มีค่าใช้จ่าย",
-      "publisher": {
-        "@type": "Organization",
-        "name": "myads.dev",
-        "url": "https://www.myads.dev"
+export const metadata = {
+  metadataBase: new URL(site),
+  title: "ดาวน์โหลดเครื่องมือทำการตลาดฟรี | Facebook & Google | myads.dev",
+  description:
+    "ดาวน์โหลด Landing Page ฟรี สำหรับยิงแอด Facebook และ Google สายเทา พร้อมใช้งานทันที ไม่มีค่าใช้จ่าย",
+  alternates: { canonical: `${site}/toolfree` },
+  openGraph: {
+    type: "website",
+    url: `${site}/toolfree`,
+    title: "ดาวน์โหลดเครื่องมือทำการตลาดฟรี - Facebook & Google",
+    description:
+      "ดาวน์โหลด Landing Page พร้อมใช้งานฟรี สำหรับ Facebook และ Google",
+    images: [
+      {
+        url: `${site}/images/toolfree.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "ดาวน์โหลดเครื่องมือทำการตลาดฟรี",
       },
-      "image": "https://www.myads.dev/img/toolfree.jpg"
-    };
+    ],
+    siteName: BRAND,
+    locale: "th_TH",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ดาวน์โหลดเครื่องมือทำการตลาดฟรี - Facebook & Google",
+    description:
+      "ดาวน์โหลด Landing Page พร้อมใช้งานฟรี สำหรับ Facebook และ Google",
+    images: [`${site}/images/toolfree.jpg`],
+  },
+  robots: { index: true, follow: true },
+  icons: { icon: "/favicon.ico" },
+};
 
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.text = JSON.stringify(schemaData);
-    document.head.appendChild(script);
-  }, []);
+export default function ToolfreePage() {
+  const webPageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "ดาวน์โหลดเครื่องมือทำการตลาดฟรี - Facebook และ Google",
+    url: `${site}/toolfree`,
+    description:
+      "ดาวน์โหลดฟรี! เครื่องมือ Landing Page สำหรับยิงแอด Facebook และ Google สายเทา ดาวน์โหลดทันทีไม่มีค่าใช้จ่าย",
+    publisher: {
+      "@type": "Organization",
+      name: BRAND,
+      url: site,
+      logo: { "@type": "ImageObject", url: LOGO_URL },
+    },
+    image: `${site}/images/toolfree.jpg`,
+    inLanguage: "th-TH",
+  };
 
   return (
     <>
-      <Head>
-        <title>
-          ดาวน์โหลดเครื่องมือทำการตลาดฟรี | Facebook & Google | myads.dev
-        </title>
-        <meta
-          name="description"
-          content="ดาวน์โหลด Landing Page ฟรี สำหรับยิงแอด Facebook และ Google สายเทา พร้อมใช้งาน"
-        />
-        <meta
-          name="keywords"
-          content="ดาวน์โหลดฟรี, landing page, ยิงแอด, facebook ads, google ads, สายเทา, myads.dev"
-        />
-        <meta
-          property="og:title"
-          content="ดาวน์โหลดเครื่องมือทำการตลาดฟรี - Facebook & Google"
-        />
-        <meta
-          property="og:description"
-          content="ดาวน์โหลด Landing Page พร้อมใช้งานฟรี สำหรับ Facebook และ Google"
-        />
-        <meta
-          property="og:image"
-          content="https://www.myads.dev/images/toolfree.jpg"
-        />
-        <meta property="og:url" content="https://www.myads.dev/toolfree" />
-        <meta property="og:type" content="website" />
-        <link
-          rel="canonical"
-          href="https://www.myads.dev/toolfree"
-        />
-        <link
-          rel="shortcut icon"
-          href="https://www.myads.dev/favicon.ico"
-          type="image/x-icon"
-        />
-        <meta name="robots" content="index, follow" />
-      </Head>
+      <JsonLd data={webPageLd} />
 
       <div className="container py-5">
-        <div className="text-center">
-          <h3>ดาวน์โหลด Landing Page Facebook</h3>
-          <Image
-            src="/images/fbd.webp"
-            width={650}
-            height={360}
-            alt="ดาวน์โหลด Facebook"
-            className="imgfb"
-          />
-          <br />
-          <button
-            type="button"
-            className="btn btn-outline-primary mt-3"
-            onClick={() => openModal("facebook")}
-          >
-             <img src="/images/dl.png" width={50} alt="ดาวน์โหลด" />
-            ดาวน์โหลด Facebook
-          </button>
+        <div className="text-center mb-5">
+          <h1 className="h3">ดาวน์โหลดเครื่องมือทำการตลาดฟรี</h1>
+          <p className="text-muted mb-0">
+            Landing Page สำหรับยิงแอด <strong>Facebook</strong> และ{" "}
+            <strong>Google</strong> พร้อมใช้งานทันที
+          </p>
         </div>
 
-        <hr className="my-5" />
-
-        {/* Google Download Section */}
-        <div className="text-center">
-          <h3>ดาวน์โหลด Landing Page Google</h3>
-          <Image
-            src="/images/google.webp"
-            width={650}
-            height={360}
-            alt="ดาวน์โหลด Google"
-            className="imggg"
-          />
-          <br />
-          <button
-            type="button"
-            className="btn btn-outline-success mt-3"
-            onClick={() => openModal("google")}
-          >
-            <img src="/images/dl.png" width={50} alt="ดาวน์โหลด" />
-            ดาวน์โหลด Google
-          </button>
-        </div>
+        <ToolfreeClient />
       </div>
-
-      {/* Countdown Modal */}
-      {(modalIsOpenFb || modalIsOpenGoogle) && (
-        <div
-          className="modal fade show"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.6)" }}
-        >
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">
-                  กำลังเตรียมไฟล์ดาวน์โหลด...
-                </h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={closeModal}
-                />
-              </div>
-              <div className="modal-body text-center">
-                <h2>โปรดรอ {timeLeft} วินาที</h2>
-                <p>ระบบจะเริ่มดาวน์โหลดไฟล์โดยอัตโนมัติ</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
-};
-
-export default Toolfree;
+}

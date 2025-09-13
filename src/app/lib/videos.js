@@ -10,18 +10,18 @@ export const videos = [
     title: "โฆษณาGoogleAdsสายเทาขึ้นหน้าเทาภายในเวลา2-3ชั่วโมง",
     description:
       "โฆษณาGoogleAdsสายเทาขึ้นหน้าเทาภายในเวลา2-3ชั่วโมง สำหรับมือใหม่ ควรต้องดู",
-    youtubeId: "GgzFZSj0VDs", // ⬅️ เปลี่ยนเป็น YouTube ID จริงของคุณ GgzFZSj0VDs
+    youtubeId: "GgzFZSj0VDs", 
     date: "2025-09-10",
     author: `ทีมงาน ${BRAND}`,
     tags: ["Google Ads", "สายเทา", "Conversion"],
-    durationISO: "PT6M30S", // ตามมาตรฐาน ISO 8601
+    durationISO: "PT6M30S", 
   },
   {
     slug: "facebook-ads-grey-capi-setup",
     title: "ยิงแอดโฆษณา Facebook conversion รูปภาพ + วีดีโอ สายเทา 2025 สำหรับมือใหม่ ควรต้องดู",
     description:
       "คลิปวีดีโอสอนยิงแอดโฆษณา Facebook conversion แบบจัดเต็มตั้งแต่เริ่มทำ sale Page Landing Page",
-    youtubeId: "UlCc4FTW6HE", // ⬅️ เปลี่ยนเป็น YouTube ID จริงของคุณ
+    youtubeId: "UlCc4FTW6HE", 
     date: "2025-09-05",
     author: `ทีมงาน ${BRAND}`,
     tags: ["Facebook Ads", "CAPI", "สายเทา"],
